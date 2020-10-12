@@ -26,7 +26,7 @@
 
   ```
   10.0.0.96   cm.bdai.com cm
-  10.0.0.227  m1.bdai.com m1
+  d.227  m1.bdai.com m1
   10.0.0.165  d1.bdai.com d1
   10.0.0.81   d2.bdai.com d2
   10.0.0.147  d3.bdai.com d3
@@ -307,10 +307,10 @@ _CM 서버에 설치_
 `sudo vi /etc/default/cloudera-scm-server`
 
 ```shell
-export CM_JAVA_OPTS -Xmx4G
+export CM_JAVA_OPTS="-Xmx4G ..."
 ```
 
-_CM 제외한 모든 서버에 설치_
+_모든 서버에 설치_
 
 `sudo yum install cloudera-manager-daemons cloudera-manager-agent`
 
@@ -325,13 +325,21 @@ server_port=7180
 
 ### 7. Set up the Cloudera Manager Database
 
+_CM 서버에 설치_
 
+`sudo /usr/share/cmf/schema/scm_prepare_database.sh mysql scm scm 1234`
 
+### 8. Install CDH and Other Software
 
+_CM 서버에 설치_
 
+`sudo systemctl start cloudera-scm-server`
 
+`sudo tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log`
 
+준비 완료 : `INFO WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.`
 
+`http://13.124.143.184:7180` 접속 후 admin / admin 으로 로그인
 
-
+## Install a cluster and deploy CDH
 
