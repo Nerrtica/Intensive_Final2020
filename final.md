@@ -56,6 +56,8 @@
 
 #### 3. If you have ext-based volumes, list the reserve space setting
 
+
+
 #### 4. Disable transparent hugepage support
 
 * transparent hugepage가 enable 되어있는지 확인
@@ -76,7 +78,7 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
 #### 6. Show that forward and reverse host lookups are correctly resolved
 
-
+`getent hosts`
 
 #### 7. Show the nscd service is running
 
