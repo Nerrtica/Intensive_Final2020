@@ -38,6 +38,8 @@
 
   `sudo yum install -y wget`
 
+  `sudo yum install bind-utils -y`
+
 ### 3. System Configuration Checks
 
 #### 1. Check vm.swappiness on all your nodes
