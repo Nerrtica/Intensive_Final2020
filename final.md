@@ -137,3 +137,15 @@ export JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera
 export PATH=$PATH:$JAVA_HOME/bin
 ```
 
+### 3. Install a supported JDBC Connector
+
+`wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.49.tar.gz`
+
+`tar zxvf mysql-connector-java-5.1.46.tar.gz`
+
+`sudo mkdir -p /usr/share/java/`
+
+`cd mysql-connector-java-5.1.46`
+
+`sudo cp mysql-connector-java-5.1.46-bin.jar /usr/share/java/mysql-connector-java.jar`
+
