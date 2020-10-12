@@ -26,7 +26,7 @@
 
   ```
   10.0.0.96   cm.bdai.com cm
-  d.227  m1.bdai.com m1
+  10.0.0.227  m1.bdai.com m1
   10.0.0.165  d1.bdai.com d1
   10.0.0.81   d2.bdai.com d2
   10.0.0.147  d3.bdai.com d3
@@ -318,7 +318,7 @@ _모든 서버에 설치_
 
 ```shell
 server_host=cm
-server_port=7180
+server_port=7182
 ```
 
 `sudo systemctl start cloudera-scm-agent`
