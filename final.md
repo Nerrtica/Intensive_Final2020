@@ -25,20 +25,16 @@
   `sudo vi /etc/hosts`
 
   ```
-  13.124.143.184  cm.bdai.com cm
-  3.35.149.106    m1.bdai.com m1
-  3.35.14.86      d1.bdai.com d1
-  3.34.40.60      d2.bdai.com d2
-  13.125.129.106  d3.bdai.com d3
+  10.0.0.96   cm.bdai.com cm
+  10.0.0.227  m1.bdai.com m1
+  10.0.0.165  d1.bdai.com d1
+  10.0.0.81   d2.bdai.com d2
+  10.0.0.147  d3.bdai.com d3
   ```
 
 * yum 업데이트
 
   `sudo yum update`
-
-  `sudo yum install -y wget`
-
-  `sudo yum install bind-utils -y`
 
 ### 3. System Configuration Checks
 
@@ -58,7 +54,7 @@
 
 #### 3. If you have ext-based volumes, list the reserve space setting
 
-
+`cat /etc/fstab`
 
 #### 4. Disable transparent hugepage support
 
@@ -80,7 +76,7 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
 #### 6. Show that forward and reverse host lookups are correctly resolved
 
-`getent hosts`
+`getent hosts` 
 
 #### 7. Show the nscd service is running
 
@@ -116,7 +112,23 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
 ## Cloudera Manager Install Lab
 
-### Path B install using CM 5.15.x
+**Path B install using CM 5.15.x**
+
+### 1. Configure a Repository for Cloudera Manager
+
+`sudo yum install -y wget`
+
+`sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/`
+
+`sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera`
+
+### 2. Intall Java Development Kit
+
+`sudo yum install -y oracle-j2sdk1.7`
+
+`sudo vi /etc/profile`
+
+
 
 
 
