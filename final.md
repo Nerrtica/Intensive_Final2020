@@ -25,11 +25,11 @@
   `sudo vi /etc/hosts`
 
   ```
-  13.124.143.184	cm.bdai.com	cm
-  3.35.149.106		m1.bdai.com m1
-  3.35.14.86			d1.bdai.com	d1
-  3.34.40.60			d2.bdai.com	d2
-  13.125.129.106	d3.bdai.com	d3
+  13.124.143.184  cm.bdai.com cm
+  3.35.149.106    m1.bdai.com m1
+  3.35.14.86      d1.bdai.com d1
+  3.34.40.60      d2.bdai.com d2
+  13.125.129.106  d3.bdai.com d3
   ```
 
 * yum 업데이트
