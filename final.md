@@ -122,13 +122,18 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
 `sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera`
 
-### 2. Intall Java Development Kit
+### 2. Install a supported Oracle JDK
+
+#### 1. 자바 설치
 
 `sudo yum install -y oracle-j2sdk1.7`
 
+#### 2. 자바 홈 환경 변수 추가
+
 `sudo vi /etc/profile`
 
-
-
-
+```shell
+export JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera
+export PATH=$PATH:$JAVA_HOME/bin
+```
 
