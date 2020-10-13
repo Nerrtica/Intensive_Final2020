@@ -25,11 +25,11 @@
   `sudo vi /etc/hosts`
 
   ```
-  10.0.0.96   cm.bdai.com cm
-  10.0.0.227  m1.bdai.com m1
-  10.0.0.165  d1.bdai.com d1
-  10.0.0.81   d2.bdai.com d2
-  10.0.0.147  d3.bdai.com d3
+  10.0.0.219  cm.bdai.com cm
+  10.0.0.220  m1.bdai.com m1
+  10.0.0.87   d1.bdai.com d1
+  10.0.0.216  d2.bdai.com d2
+  10.0.0.214  d3.bdai.com d3
   ```
 
   세팅 후 재접속
@@ -133,15 +133,17 @@ _모든 서버에 설치_
 
 `sudo yum install -y wget`
 
-`sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/`
-
-`sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera`
-
 `sudo vi /etc/yum.repos.d/cloudera-manager.repo`
 
 ```
-버전 수정 : https://docs.cloudera.com/documentation/enterprise/release-notes/topics/cm_vd.html
+[cloudera-manager]
+name = Cloudera Manager, Version 5.15.2
+baseurl = https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.15.2/
+gpgkey = https://archive.cloudera.com/redhat/cdh/RPM-GPG-KEY-cloudera
+gpgcheck = 1
 ```
+
+`sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera`
 
 ### 2. Install a supported Oracle JDK
 
