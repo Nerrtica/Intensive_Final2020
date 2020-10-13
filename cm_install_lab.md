@@ -333,7 +333,7 @@ _password : 1234_
 
 `GRANT ALL ON oozie.* TO 'oozie'@'%' IDENTIFIED BY '1234';`
 
-### 6. Install Cloudera Manager Server/Agent
+### 6. Install Cloudera Manager Server
 
 _CM 서버에 설치_
 
@@ -344,19 +344,6 @@ _CM 서버에 설치_
 ```shell
 export CM_JAVA_OPTS="-Xmx4G ..."
 ```
-
-_모든 서버에 설치_
-
-`sudo yum install cloudera-manager-daemons cloudera-manager-agent`
-
-`sudo vi /etc/cloudera-scm-agent/config.ini`
-
-```shell
-server_host=cm
-server_port=7182
-```
-
-`sudo systemctl start cloudera-scm-agent`
 
 ### 7. Set up the Cloudera Manager Database
 
