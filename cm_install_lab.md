@@ -74,7 +74,7 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
 #### 5. List your network interface configuration
 
-`cat /etc/hosts`
+`ifconfig -a`
 
 #### 6. Show that forward and reverse host lookups are correctly resolved
 
@@ -102,13 +102,13 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
   `sudo yum install -y ntp`
 
-* Run nscd service
+* Run ntpd service
 
   `sudo systemctl start ntpd`
 
   `sudo systemctl enable ntpd`
 
-* Check the nscd service is running
+* Check the ntpd service is running
 
   `sudo systemctl status ntpd`
 
