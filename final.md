@@ -1,8 +1,8 @@
-# Intensive Coursework Final
+# Cloudera Manager Install Lab
 
 [TOC]
 
-## CM Install Lab
+## Preparation to Install
 
 ### 1. 접속
 
@@ -31,6 +31,8 @@
   10.0.0.81   d2.bdai.com d2
   10.0.0.147  d3.bdai.com d3
   ```
+
+  세팅 후 재접속
 
 * yum 업데이트
 
@@ -110,9 +112,7 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
   `sudo systemctl status ntpd`
 
-## Cloudera Manager Install Lab
-
-**Path B install using CM 5.15.x**
+## Path B install using CM 5.15.x
 
 ### 1. Configure a Repository for Cloudera Manager
 
@@ -337,7 +337,7 @@ _CM 서버에 설치_
 
 `sudo tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log`
 
-준비 완료 : `INFO WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.`
+준비 완료 시 출력 : `INFO WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.`
 
 `http://13.124.143.184:7180` 접속 후 admin / admin 으로 로그인
 
