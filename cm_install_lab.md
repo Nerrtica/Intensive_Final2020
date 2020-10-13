@@ -153,12 +153,26 @@ _모든 서버에 설치_
 
 `sudo yum install -y oracle-j2sdk1.7`
 
+1.8로 깔아야 kafka 에러가 안 남
+
 #### 2. 자바 홈 환경 변수 추가
 
 `sudo vi /etc/profile`
 
 ```shell
 export JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera
+export PATH=$PATH:$JAVA_HOME/bin
+```
+
+세팅 후 재접속
+
+* 1.8 버전 open jdk
+
+```shell
+sudo yum install -y java-1.8.0-openjdk-devel
+sudo vi /etc/profile
+
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk/jre
 export PATH=$PATH:$JAVA_HOME/bin
 ```
 
@@ -319,7 +333,7 @@ _password : 1234_
 
 `GRANT ALL ON oozie.* TO 'oozie'@'%' IDENTIFIED BY '1234';`
 
-### 6. Install Cloudera Manager Server
+### 6. Install Cloudera Manager Server/Agent
 
 _CM 서버에 설치_
 
