@@ -72,6 +72,19 @@ echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
 echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 ```
 
+`sudo chmod +x /etc/rc.d/rc.local`
+
+`sudo vi /etc/default/grub ` -> ```transparent_hugepage=never (on line GRUB_CMDLINE_LINUX )```
+
+`sudo grub2-mkconfig -o /boot/grub2/grub.cfg`
+` sudo systemctl start tuned`
+`sudo tuned-adm off`
+
+`sudo tuned-adm list`
+`sudo systemctl stop tuned`
+
+`sudo systemctl disable tuned`
+
 #### 5. List your network interface configuration
 
 `ifconfig -a`
@@ -123,6 +136,12 @@ _모든 서버에 설치_
 `sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/`
 
 `sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera`
+
+`sudo vi /etc/yum.repos.d/cloudera-manager.repo`
+
+```
+버전 수정 : https://docs.cloudera.com/documentation/enterprise/release-notes/topics/cm_vd.html
+```
 
 ### 2. Install a supported Oracle JDK
 
